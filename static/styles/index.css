@@ -1,0 +1,292 @@
+
+
+.menu-lateral{
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    background: var(--color-background-main3);
+}
+
+body.night .menu-lateral{
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    background: var(--color-background-main3);
+}
+
+
+
+
+
+
+
+
+
+
+.menu-lateral header{
+    width: 100%;
+    height: 30%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-bottom: 0.1vw solid var(--color-border-main3);
+}
+
+.menu-lateral header .container-logo{
+    width: 100%;
+    height: 70%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.menu-lateral header .container-logo .container-resource{
+    width: 8vw;
+    height: 8vw;
+    top: 80%;
+    left: 50%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transform: translate(-50%,-80%);
+    border-radius: 50%;
+}
+
+.menu-lateral header .container-logo .container-resource img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    object-fit: cover;
+}
+
+.menu-lateral header .container-user-name{
+    width: 100%;
+    height: 30%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.menu-lateral header .container-user-name .content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.menu-lateral header .container-user-name .content p{
+    width: auto;
+    height: auto;
+    top: 10%;
+    left: 50%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transform: translate(-50%,-10%);
+    color: var(--color-font-main2);
+    font-family: Roboto3;
+}
+
+.menu-lateral header .container-user-name .content p text{
+    font-family: inherit;
+}
+
+
+
+
+
+
+
+
+
+.menu-lateral aside{
+    width: 100%;
+    height: 60%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-bottom: 0.1vw solid var(--color-border-main2);
+}
+
+.menu-lateral aside .container-list{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-lateral aside .container-list ul{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    overflow-y: auto;
+}
+
+.menu-lateral aside .container-list ul li{
+    width: 100%;
+    height: 4vw;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.menu-lateral aside .container-list ul li .caja-lista{
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%,-50%);
+}
+
+.menu-lateral aside .container-list ul li .caja-lista .contenedor-icon{
+    width: 20%;
+    height: 100%;
+    left: 0;
+    float: left;
+    position: relative;
+}
+
+.menu-lateral aside .container-list ul li .caja-lista .contenedor-icon span{
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%,-50%);
+    color: var(--color-font-main2);
+    font-size: 1.5vw;
+}
+
+.menu-lateral aside .container-list ul li .caja-lista .contenedor-content{
+    width: 80%;
+    height: 100%;
+    left: 0;
+    float: left;
+    position: relative;
+}
+
+.menu-lateral aside .container-list ul li .caja-lista .contenedor-content .texto{
+    width: 100%;
+    height: 100%;
+    position: inherit;
+    display: inline-block;
+}
+
+.menu-lateral aside .container-list ul li .caja-lista .contenedor-content .texto p{
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0%;
+    position: absolute;
+    transform: translate(-0%,-50%);
+    font-size: 1.4vw;
+    color: var(--color-font-main2);
+}
+
+
+
+
+
+
+
+
+
+
+.menu-lateral footer{
+    width: 100%;
+    height: 10%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.menu-lateral footer .contenido{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-lateral footer .contenido .derechos{
+    width: 60%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.menu-lateral footer .contenido .derechos .container{
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 0%;
+    overflow: hidden;
+    position: relative;
+    transform: translate(0%,-50%);
+}
+
+.menu-lateral footer .contenido .derechos .container p{
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    position: relative;
+    transform: translate(-50%,-50%);
+}
+
+.menu-lateral footer .contenido .derechos .container p text{
+    font-size: 0.8vw;
+    color: var(--color-font-main2);
+}
+
+.menu-lateral footer .contenido .acciones{
+    width: 40%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.menu-lateral footer .contenido .acciones .boton{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu-lateral footer .contenido .acciones .boton .interno{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu-lateral footer .contenido .acciones .boton .interno span{
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.4vw;
+    cursor: pointer;
+    color: var(--color-font-main2);
+    transform: translate(-50%,-50%);
+}
+
+body.night .menu-lateral footer .contenido .acciones .boton .interno.dayNight span{
+    color: var(--color-font-primary);
+}
+
+
+
+
+

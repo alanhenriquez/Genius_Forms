@@ -1,0 +1,44 @@
+
+:root{
+    --color-background-main1: #fbfbfb;
+    --color-background-main2: #dfdfdf;
+    --color-background-main3: #373737;
+    --color-background-main4: #2c2c2c;
+    --color-background-main5: #675858;
+    --color-background-main6: #4a4343;
+    --color-background-main7: #262626;
+    --color-border-main1: #e7e7e7;
+    --color-border-main2: #939393;
+    --color-border-main3: #8e8e8e;
+    --color-font-main1: #262626;
+    --color-font-main2: #ffffff;
+    --color-font-main3: #5a5a5a;
+    --color-font-primary: #5cc1ff;
+    --color-font-secondary: #cd1010;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 1.1vw;
+    color: inherit var(--color-font-main1);
+    font-family: Roboto10;
+    box-sizing: border-box;
+    float: left;
+}
+
+body{
+    background: var(--color-background-main1);
+}
+
+body.night{
+    background: var(--color-background-main7);
+}
+
+.ELLIPSIS{
+    width: 92.5% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    float: none !important;
+}
