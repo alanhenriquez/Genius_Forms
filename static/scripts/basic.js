@@ -32,54 +32,79 @@ document.addEventListener("scroll", function() {
 
 
 
-
+//Arbol de Datos
 const datos = {
     theme:{
-        principal:document.querySelector("body"),
-        clase:"night",
+        main:document.querySelector("body"),
         boton:document.querySelector(".dayNight span"),
         botonIconDay:"icon-brightness_medium",
         botonIconNight:"icon-brightness_4",
         botonColor:"rgb(55, 156, 251)",
-        botonTitle:"Dia/Noche"
+        botonTitle:"Dia/Noche",
+        claseNight:"night",
     }
 };
 
 
 
-function evaluateSessionStorage(key){
-    const message = sessionStorage.getItem("mensaje");
-    if (message === null) {
-        console.log("El valor no existe en el sessionStorage");
-    } else {
-        console.log("El valor existe en el sessionStorage: " + message);
+//Evaluadores
+
+function existSessionStorage(key){
+    const message = sessionStorage.getItem(key);
+    return message === null ? false : true;
+}
+
+function existClass(tag,clase){
+    return tag.classList.contains(clase) ? true : false;
+}
+
+function existTheme(tag,clase){
+    if (!tag.classList.contains(clase)){
+        return !existSessionStorage(clase) ? false : true;
+    }
+    else {
+        return !existSessionStorage(clase) ? false : true;
     }
 }
 
-function changeIconClick(target,icon){
-    target.addEventListener("click", function(){
-        target.classList.toggle(icon);
+
+
+//Cambiadores
+
+function changeIconClick(tag,icon){
+    tag.addEventListener("click", function(){
+        tag.classList.toggle(icon);
     });
 }
 
-function changeTheme(target,clase,boton){
+function changeTheme(tag,clase,boton,botonClass){
+    if (!existClass(tag,clase) && !existClass(boton,botonClass)){
+        if (existTheme(tag,clase)){
+            tag.classList.add(sessionStorage.getItem(clase));
+            boton.classList.add(sessionStorage.getItem(botonClass));
+        }
+    }
+
     boton.addEventListener("click", function(){
-        if (!target.classList.contains(clase)){
-            target.classList.add(clase);
-            sessionStorage.setItem("night", clase);
-        }else{
-            target.classList.remove(clase);
+        if (!existClass(tag,clase) && !existClass(boton,botonClass)){
+            if (!existTheme(tag,clase)){
+                sessionStorage.setItem(clase, clase);
+                sessionStorage.setItem(botonClass, botonClass);
+                tag.classList.add(clase);
+                boton.classList.add(botonClass);
+            }
+        }
+        else {
+            if (existTheme(tag,clase)){
+                tag.classList.remove(clase);
+                boton.classList.remove(botonClass);
+                sessionStorage.removeItem(clase);
+                sessionStorage.removeItem(botonClass);
+            }
         }
     })
 }
 
-function evaluateTheme(){
-    if (!datos.theme.principal.hasAttribute("class",datos.theme.clase)){
 
-    }
-    sessionStorage.getItem("night");
-}
-
-changeTheme(datos.theme.principal,datos.theme.clase,datos.theme.boton);
-changeIconClick(datos.theme.boton,datos.theme.botonIconNight);
+changeTheme(datos.theme.main,datos.theme.claseNight,datos.theme.boton,datos.theme.botonIconNight);
 
