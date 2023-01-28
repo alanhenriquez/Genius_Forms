@@ -38,10 +38,14 @@ const datos = {
         main:document.querySelector("body"),
         boton:document.querySelector(".dayNight span"),
         botonIconDay:"icon-brightness_medium",
-        botonIconNight:"icon-brightness_4",
-        botonColor:"rgb(55, 156, 251)",
+        botonIconNight:"icon-nightlight_round",
+        botonColor:"rgb(253, 231, 121)",
         botonTitle:"Dia/Noche",
         claseNight:"night",
+    },
+    dragDrop:{
+        mainDragger: document.querySelector('.main-dragger'),
+        mainDropper: document.querySelector('.main-dropper'),
     }
 };
 
@@ -106,5 +110,65 @@ function changeTheme(tag,clase,boton,botonClass){
 }
 
 
-changeTheme(datos.theme.main,datos.theme.claseNight,datos.theme.boton,datos.theme.botonIconNight);
+//Setters
+
+function setattributeAllChilds(objetivo,atributo,valor) {
+    const children = Array.from(objetivo.children);
+    children.forEach(child => child.setAttribute(atributo, valor));
+}
+
+
+
+//DraggerDrop
+
+function dragDrop(draggerElem,dropperElem){
+    let nodeToClone;
+    const mainDragger = draggerElem;
+    const mainDropper = dropperElem;
+    setattributeAllChilds(draggerElem,"draggable",true);
+
+
+    mainDragger.addEventListener('dragstart', (e) => {
+        nodeToClone = e.target;
+    });
+
+    mainDropper.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+
+    mainDropper.addEventListener('drop', (e) => {
+        e.preventDefault();
+        let node = nodeToClone.cloneNode(true);
+        let button = document.createElement('button');
+        button.innerHTML = 'Delete';
+        button.addEventListener('click', (e) => {
+            e.target.parentNode.remove();
+        });
+        node.appendChild(button);
+        mainDropper.appendChild(node);
+    });
+}
+
+
+
+
+//InicializadorGlobal
+
+function init() {
+
+    changeTheme(datos.theme.main,datos.theme.claseNight,datos.theme.boton,datos.theme.botonIconNight);
+
+    dragDrop(datos.dragDrop.mainDragger,datos.dragDrop.mainDropper);
+
+    
+
+
+}
+
+
+
+document.addEventListener('DOMContentLoaded', init);
+
+
+
 

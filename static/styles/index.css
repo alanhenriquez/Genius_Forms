@@ -3,8 +3,8 @@
 .menu-lateral{
     width: 20vw;
     height: 100vh;
-    position: absolute;
-    display: inline-block;
+    float: left;
+    position: relative;
     overflow: hidden;
     background: var(--color-background-main3);
 }
@@ -30,8 +30,8 @@ body.night .menu-lateral{
 .menu-lateral header{
     width: 100%;
     height: 30%;
+    float: left;
     position: relative;
-    display: inline-block;
     overflow: hidden;
     border-bottom: 0.1vw solid var(--color-border-main3);
 }
@@ -108,8 +108,8 @@ body.night .menu-lateral{
 .menu-lateral aside{
     width: 100%;
     height: 60%;
+    float: left;
     position: relative;
-    display: inline-block;
     overflow: hidden;
     border-bottom: 0.1vw solid var(--color-border-main2);
 }
@@ -205,8 +205,8 @@ body.night .menu-lateral{
 .menu-lateral footer{
     width: 100%;
     height: 10%;
+    float: left;
     overflow: hidden;
-    display: inline-block;
 }
 
 .menu-lateral footer .contenido{
@@ -238,6 +238,7 @@ body.night .menu-lateral{
     height: auto;
     top: 50%;
     left: 50%;
+    float: left;
     overflow: hidden;
     position: relative;
     transform: translate(-50%,-50%);
@@ -258,6 +259,7 @@ body.night .menu-lateral{
 .menu-lateral footer .contenido .acciones .boton{
     width: 50%;
     height: 100%;
+    float: left;
     overflow: hidden;
     position: relative;
 }
@@ -274,6 +276,7 @@ body.night .menu-lateral{
     height: auto;
     top: 50%;
     left: 50%;
+    float: left;
     overflow: hidden;
     position: relative;
     font-size: 1.4vw;
@@ -283,8 +286,90 @@ body.night .menu-lateral{
 }
 
 body.night .menu-lateral footer .contenido .acciones .boton .interno.dayNight span{
-    color: var(--color-font-primary);
+    color: var(--color-font-three);
 }
+
+
+
+
+
+
+
+
+main{
+    width: 20vw;
+    height: 100vh;
+    position: relative;
+    left: 10%;
+    float: left;
+    overflow: hidden;
+    background: var(--color-background-main3);
+}
+
+.main-dragger{
+    width: 20vw;
+    height: 50vh;
+    float: left;
+    background: rgb(86, 81, 81);
+}
+
+.main-dropper{
+    width: 20vw;
+    height: 50vh;
+    float: left;
+    background: red;
+}
+
+
+.a{
+    width: 10vw;
+    height: 20vh;
+    float: left;
+    position: relative;
+    background: rgb(87, 172, 147);
+}
+
+.b{
+    width: 10vw;
+    height: 20vh;
+    float: left;
+    position: relative;
+    background: rgb(87, 121, 172);
+}
+
+.c{
+    width: 10vw;
+    height: 20vh;
+    float: left;
+    position: relative;
+    background: rgb(134, 172, 87);
+}
+
+.d{
+    width: 10vw;
+    height: 20vh;
+    float: left;
+    position: relative;
+    background: rgb(172, 87, 171);
+}
+
+.e{
+    width: 10vw;
+    height: 20vh;
+    float: left;
+    position: relative;
+    background: rgb(172, 124, 87);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+
 
 
 
