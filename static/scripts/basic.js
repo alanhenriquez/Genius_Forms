@@ -44,8 +44,11 @@ const datos = {
         claseNight:"night",
     },
     dragDrop:{
-        mainDragger: document.querySelector('.main-dragger'),
+        mainDragger: document.querySelectorAll('.main-dragger'),
         mainDropper: document.querySelector('.main-dropper'),
+    },
+    forms:{
+        classic: document.querySelector('.formsClassic'),
     }
 };
 
@@ -71,9 +74,7 @@ function existTheme(tag,clase){
     }
 }
 
-
-
-//Cambiadores
+//Changers
 
 function changeIconClick(tag,icon){
     tag.addEventListener("click", function(){
@@ -109,15 +110,84 @@ function changeTheme(tag,clase,boton,botonClass){
     })
 }
 
+function changeNode(node, newNodeType) {
+    const newNode = document.createElement(newNodeType);
+    const parent = node.parentNode;
+    parent.replaceChild(newNode, node);
+}
 
-//Setters
+function changeNodeIdentified(node, newNodeType, className) {
+    const newNode = document.createElement(newNodeType);
+    newNode.classList.add(className);
+    const parent = node.parentNode;
+    parent.replaceChild(newNode, node);
+}
 
-function setattributeAllChilds(objetivo,atributo,valor) {
+//Getters
+
+function getMaxNum(nums) {
+    let max_num = Number.NEGATIVE_INFINITY;
+    for (let num of nums) {
+      if (num > max_num) {
+        max_num = num;
+      }
+    }
+    return max_num;
+}
+
+function getParentNode(element, targetParentClass) {
+    let current = element.parentNode;
+    while (current) {
+      if (current.classList.contains(targetParentClass)) {
+        return current;
+      }
+      current = current.parentNode;
+    }
+    return null;
+}
+
+function getParentNodes(element, className) {
+    const parentElements = [];
+    let currentElement = element;
+  
+    while (currentElement) {
+      if (currentElement.classList && currentElement.classList.contains(className)) {
+        parentElements.push(currentElement);
+      }
+      currentElement = currentElement.parentElement;
+    }
+  
+    return parentElements.length > 1 ? parentElements : parentElements[0];
+  }
+
+// Setters & Adders
+
+function setAttributeAllChilds(objetivo,atributo,valor) {
     const children = Array.from(objetivo.children);
     children.forEach(child => child.setAttribute(atributo, valor));
 }
 
+function addClassAllChilds(objetivo,atributo) {
+    const children = Array.from(objetivo.children);
+  children.forEach(child => child.classList.add(atributo));
+}
 
+function addToogleClassAllChilds(objetivo,atributo) {
+    const children = Array.from(objetivo.children);
+  children.forEach(child => child.classList.toggle(atributo));
+}
+
+//Deleters
+
+function deleteAttributeAllChilds(objetivo,atributo) {
+    const children = Array.from(objetivo.children);
+  children.forEach(child => child.removeAttribute(atributo));
+}
+
+function deleteClassAllChilds(objetivo,atributo) {
+    const children = Array.from(objetivo.children);
+  children.forEach(child => child.classList.remove(atributo));
+}   
 
 //DraggerDrop
 
@@ -125,32 +195,66 @@ function dragDrop(draggerElem,dropperElem){
     let nodeToClone;
     const mainDragger = draggerElem;
     const mainDropper = dropperElem;
-    setattributeAllChilds(draggerElem,"draggable",true);
+    const draggableElements = mainDragger;
+    const botonHTML = `
+    <div class="acciones">
+        <div class="boton">
+            <div class="interno editar">
+                <span class="icon-pencil"></span>
+            </div>
+        </div>
+        <div class="boton">
+            <div class="interno borrar">
+                <span class="icon-delete"></span>
+            </div>
+        </div>
+    </div>
+    `;
 
+    draggableElements.forEach(element => {
 
-    mainDragger.addEventListener('dragstart', (e) => {
-        nodeToClone = e.target;
-    });
+        setAttributeAllChilds(element,"draggable",true);
 
-    mainDropper.addEventListener('dragover', (e) => {
-        e.preventDefault();
+        element.addEventListener('dragstart', (e) => {
+            nodeToClone = e.target;
+        });
+
+        mainDropper.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
     });
 
     mainDropper.addEventListener('drop', (e) => {
         e.preventDefault();
         let node = nodeToClone.cloneNode(true);
-        let button = document.createElement('button');
-        button.innerHTML = 'Delete';
-        button.addEventListener('click', (e) => {
-            e.target.parentNode.remove();
-        });
-        node.appendChild(button);
+        let menuOptions = document.createElement('div');
+        menuOptions.className = "menu-options";
+        menuOptions.innerHTML+= botonHTML;
+        node.appendChild(menuOptions);
         mainDropper.appendChild(node);
+
+
+        let botonEdit = document.querySelectorAll(".menu-options .acciones .boton .editar span");
+        botonEdit.forEach(element => {
+            element.addEventListener('click', (e) => {
+                e.target.findParent
+            })
+        })
+
+        let botonDelete = document.querySelectorAll(".menu-options .acciones .boton .borrar span");
+        botonDelete.forEach(element => {
+            element.addEventListener('click', (e) => {
+                e.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
+            });
+        })
+        
     });
+    
+    
+
+    
 }
-
-
-
 
 //InicializadorGlobal
 
@@ -161,13 +265,27 @@ function init() {
     dragDrop(datos.dragDrop.mainDragger,datos.dragDrop.mainDropper);
 
     
+      
+      const descripcion = document.querySelector(".descripcion");
+      const mainDragger = getParentNodes(descripcion, "fromulario");
+      
+      if (mainDragger) {
+        console.log("El nodo padre main-dragger ha sido encontrado: ", mainDragger);
+      } else {
+        console.log("No se ha encontrado un nodo padre main-dragger.");
+      }
+
 
 
 }
 
 
 
+
+
+
 document.addEventListener('DOMContentLoaded', init);
+
 
 
 

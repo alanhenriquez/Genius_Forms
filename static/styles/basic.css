@@ -4,18 +4,35 @@
     --color-background-main2: #dfdfdf;
     --color-background-main3: #373737;
     --color-background-main4: #2c2c2c;
-    --color-background-main5: #675858;
-    --color-background-main6: #4a4343;
-    --color-background-main7: #262626;
+    --color-background-main5: #7e7e7e;
+    --color-background-main6: #555555;
     --color-border-main1: #e7e7e7;
     --color-border-main2: #939393;
-    --color-border-main3: #8e8e8e;
+    --color-border-main3: #000000;
     --color-font-main1: #262626;
     --color-font-main2: #ffffff;
     --color-font-main3: #5a5a5a;
-    --color-font-primary: #5cc1ff;
-    --color-font-secondary: #cd1010;
-    --color-font-three: #e4c600;
+    --color-1: #5cc1ff;
+    --color-2: #cd1010;
+    --color-3: #e4c600;
+    --color-4: #2d2a2c;
+    --color-white-1:#ffffff;
+    --color-white-2:#fbfbfb;
+    --color-white-3:#e0e0e0;
+    --color-gris-1:#c0c0c0;
+    --color-gris-2:#ababab;
+    --color-gris-3:#a5a5a5;
+    --color-gris-4:#8f8f8f;
+    --color-gris-5:#7e7e7e;
+    --color-gris-6:#6a6a6a;
+    --color-gris-7:#575757;
+    --color-gris-8:#444444;
+    --color-gris-9:#333333;
+    --color-gris-10:#272727;
+    --color-black-1:#262626;
+    --color-black-2:#1e1e1e;
+    --color-black-3:#181818;
+    --color-black-4:#000000;
 }
 
 *{
@@ -23,16 +40,20 @@
     padding: 0;
     font-size: 1.1vw;
     color: inherit var(--color-font-main1);
-    font-family: Roboto10;
+    font-family: Roboto8;
     box-sizing: border-box;
 }
 
 body{
-    background: var(--color-background-main1);
+    width: 100vw;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    background: var(--color-white-3);
 }
 
 body.night{
-    background: var(--color-background-main7);
+    background: var(--color-background-main4);
 }
 
 .ELLIPSIS{
@@ -42,3 +63,21 @@ body.night{
     white-space: nowrap !important;
     float: none !important;
 }
+
+
+.DISPLAY-MENU-FORMS{
+    animation-name: displayMenuForms;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: initial;
+}
+
+@keyframes displayMenuForms {
+    from {
+      height: 0%;
+    }
+    to {
+      height: auto;
+    }
+}
+

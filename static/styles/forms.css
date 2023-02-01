@@ -1,0 +1,221 @@
+
+
+
+
+
+.targeta-formulario{
+    width: 90%;
+    min-height: 5vw;
+    height: auto;
+    top: 0%;
+    left: 50%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    transform: translate(-50%,-0%);
+    border-radius: 1vw;
+    margin-top: 2vw;
+}
+
+.targeta-formulario .titulo{
+    width: 100%;
+    height: 5vw;
+    top: 0%;
+    left: 50%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    transform: translate(-50%,-0%);
+    border-radius: 1vw;
+    background: rgb(78,19,154);
+    background: linear-gradient(90deg, rgba(78,19,154,1) 0%, rgba(22,31,149,1) 45%, rgba(0,212,255,1) 100%); 
+    padding: 1vw 1vw;
+}
+
+.targeta-formulario .titulo p{
+    width: 100%;
+    height: 100%;
+    color: var(--color-font-main2);
+}
+
+.targeta-formulario .titulo p text{
+    width: auto;
+    height: auto;
+    color: inherit;
+    font-size: 1.2vw;
+    top: 50%;
+    left: 50%;
+    float: left;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.targeta-formulario .content{
+    width: 100%;
+    height: auto;
+    top: 0%;
+    left: 50%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    transform: translate(-50%,-0%);
+    text-align: justify;
+    padding-top: 2vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+.fromulario{
+    width: 100%;
+    min-height: 9vw;
+    height: auto;
+    top: 0%;
+    left: 50%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    transform: translate(-50%,-0%);
+    background: var(--color-background-main1);
+    border: solid 0.1vw var(--color-border-main2);
+    border-radius: 1vw;
+    margin-bottom: 2vw;
+    padding: 0vw 2vw;
+}
+
+body.night .fromulario{
+    background: var(--color-background-main3);
+}
+
+.fromulario .title{
+    width: 100%;
+    min-height: 7vw;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.fromulario .title p{
+    width: 100%;
+    height: 100%;
+}
+
+.fromulario .title p text{
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 0;
+    float: left;
+    overflow: hidden;
+    position: absolute;
+    transform: translate(0,-50%);
+    text-align: left;
+    font-size: 2vw;
+}
+
+body.night .fromulario .title p text{
+    color: var(--color-font-main2);
+}
+
+.fromulario .descripcion{
+    width: 100%;
+    min-height: 10vw;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.fromulario .descripcion p{
+    width: 100%;
+    height: 100%;
+}
+
+.fromulario .descripcion p text{
+    width: auto;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+    font-size: 1.3vw;
+    color: var(--color-font-main3);
+}
+
+body.night .fromulario .descripcion p text{
+    color: var(--color-font-main3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*MENU OPCIONES QUE APARECE AL DRAGGEAR EL ELEMENTO*/
+
+.fromulario .menu-options{
+    width: 8vw;
+    height: 2.5vw;
+    top: 1.5vw;
+    right: 1.5vw;
+    float: right;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 0vw;
+    z-index: 10;
+    border-radius: 0.5vw;
+}
+
+.fromulario .menu-options .acciones{
+    width: 100%;
+    height: 100%;
+}
+
+.fromulario .menu-options .acciones .boton{
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.fromulario .menu-options .acciones .boton .interno{
+    width: 100%;
+    height: 100%;
+}
+
+.fromulario .menu-options .acciones .boton .interno span{
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5vw;
+    position: absolute;
+    color: var(--color-font-main3);
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+
+body.night .fromulario .menu-options .acciones .boton .interno span{
+    color: var(--color-font-main2);
+}
+  
+    

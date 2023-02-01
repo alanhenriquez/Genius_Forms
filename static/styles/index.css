@@ -6,16 +6,13 @@
     float: left;
     position: relative;
     overflow: hidden;
-    background: var(--color-background-main3);
+    background: var(--color-background-main1);
+    border-right: solid 0.1vw var(--color-border-main2);
 }
 
 body.night .menu-lateral{
-    width: 20vw;
-    height: 100vh;
-    position: absolute;
-    display: inline-block;
-    overflow: hidden;
-    background: var(--color-background-main3);
+    background: var(--color-background-main4);
+    border-right: solid 0.1vw var(--color-border-main2);
 }
 
 
@@ -33,7 +30,11 @@ body.night .menu-lateral{
     float: left;
     position: relative;
     overflow: hidden;
-    border-bottom: 0.1vw solid var(--color-border-main3);
+    border-bottom: 0.1vw solid var(--color-border-main2);
+}
+
+body.night .menu-lateral header{
+    background: var(--color-background-main4);
 }
 
 .menu-lateral header .container-logo{
@@ -89,8 +90,12 @@ body.night .menu-lateral{
     display: inline-block;
     overflow: hidden;
     transform: translate(-50%,-10%);
-    color: var(--color-font-main2);
+    color: var(--color-font-main1);
     font-family: Roboto3;
+}
+
+body.night .menu-lateral header .container-user-name .content p{
+    color: var(--color-font-main2);
 }
 
 .menu-lateral header .container-user-name .content p text{
@@ -112,6 +117,10 @@ body.night .menu-lateral{
     position: relative;
     overflow: hidden;
     border-bottom: 0.1vw solid var(--color-border-main2);
+}
+
+body.night .menu-lateral aside{
+    background: var(--color-background-main3);
 }
 
 .menu-lateral aside .container-list{
@@ -163,7 +172,19 @@ body.night .menu-lateral{
     position: absolute;
     display: inline-block;
     transform: translate(-50%,-50%);
-    color: var(--color-font-main2);
+    color: var(--color-font-main1);
+    font-size: 1.5vw;
+}
+
+body.night .menu-lateral aside .container-list ul li .caja-lista .contenedor-icon span{
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%,-50%);
+    color: var(--color-font-main3);
     font-size: 1.5vw;
 }
 
@@ -190,6 +211,10 @@ body.night .menu-lateral{
     position: absolute;
     transform: translate(-0%,-50%);
     font-size: 1.4vw;
+    color: var(--color-font-main1);
+}
+
+body.night .menu-lateral aside .container-list ul li .caja-lista .contenedor-content .texto p{
     color: var(--color-font-main2);
 }
 
@@ -246,6 +271,10 @@ body.night .menu-lateral{
 
 .menu-lateral footer .contenido .derechos .container p text{
     font-size: 0.8vw;
+    color: var(--color-font-main3);
+}
+
+body.night .menu-lateral footer .contenido .derechos .container p text{
     color: var(--color-font-main2);
 }
 
@@ -281,12 +310,16 @@ body.night .menu-lateral{
     position: relative;
     font-size: 1.4vw;
     cursor: pointer;
-    color: var(--color-font-main2);
+    color: var(--color-font-main3);
     transform: translate(-50%,-50%);
 }
 
+body.night .menu-lateral footer .contenido .acciones .boton .interno span{
+    color: var(--color-font-main2);
+}
+
 body.night .menu-lateral footer .contenido .acciones .boton .interno.dayNight span{
-    color: var(--color-font-three);
+    color: var(--color-3);
 }
 
 
@@ -297,79 +330,74 @@ body.night .menu-lateral footer .contenido .acciones .boton .interno.dayNight sp
 
 
 main{
-    width: 20vw;
+    width: 55vw;
     height: 100vh;
+    float: left;
     position: relative;
-    left: 10%;
+    overflow: hidden;
+}
+
+main .container{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: auto;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+}
+
+main .main-dropper{
+    width: 90%;
+    height: auto;
+    min-height: 200%;
+    top: 0%;
+    left: 50%;
     float: left;
     overflow: hidden;
+    position: relative;
+    padding: 2vw 2vw;
+    transform: translate(-50%,-0%);
+    border: solid 0.1vw var(--color-border-main2);
+    border-radius: 3vw;
+    background: #dedede;
+    box-shadow:  0.5vw 0.5vw 3vw #bebebe,
+             -0.5vw -0.5vw 3vw 0.5vw #ffffff;
+}
+
+body.night main .main-dropper{
+    background: #4c4c4c;
+    box-shadow:  0.5vw 0.5vw 0vw #919191,
+             -0.5vw -0.5vw 0vw #2e2e2e;
+}
+
+
+
+
+
+
+
+
+
+
+.menu-elementos{
+    width: 25vw;
+    height: 100vh;
+    overflow: hidden;
+    display: inline-block;
+    border-left: solid 0.1vw var(--color-border-main2);
+}
+
+body.night .menu-elementos{
     background: var(--color-background-main3);
+    border-left: solid 0.1vw var(--color-border-main2);
 }
 
-.main-dragger{
-    width: 20vw;
-    height: 50vh;
-    float: left;
-    background: rgb(86, 81, 81);
+.menu-elementos .container{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
-
-.main-dropper{
-    width: 20vw;
-    height: 50vh;
-    float: left;
-    background: red;
-}
-
-
-.a{
-    width: 10vw;
-    height: 20vh;
-    float: left;
-    position: relative;
-    background: rgb(87, 172, 147);
-}
-
-.b{
-    width: 10vw;
-    height: 20vh;
-    float: left;
-    position: relative;
-    background: rgb(87, 121, 172);
-}
-
-.c{
-    width: 10vw;
-    height: 20vh;
-    float: left;
-    position: relative;
-    background: rgb(134, 172, 87);
-}
-
-.d{
-    width: 10vw;
-    height: 20vh;
-    float: left;
-    position: relative;
-    background: rgb(172, 87, 171);
-}
-
-.e{
-    width: 10vw;
-    height: 20vh;
-    float: left;
-    position: relative;
-    background: rgb(172, 124, 87);
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  input[type="radio"] {
-    margin-right: 10px;
-  }
-
 
 
 
